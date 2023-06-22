@@ -63,27 +63,48 @@ namespace Disconnected_Environment
 
         }
 
+        static string GenerateRandomNonRepetitiveString(int size)
+        {
+            Random random = new Random();
+            const string chars = "123456789abcdef";
+            char[] hexChars = new char[size];
+
+            for (int i = 0; i < size; i++)
+            {
+                hexChars[i] = chars[random.Next(chars.Length)];
+
+            }
+
+            return new string(hexChars);
+
+        }
+
         private void btnSave_Click(object sender, EventArgs e)
         {
             string nmProdi = nmp.Text;
-
             if (nmProdi == "")
             {
-                MessageBox.Show("Masukan Nama Prodi", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Masukkan Nama Prodi", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
             }
             else
             {
                 koneksi.Open();
-                string str = "Insert Into dbo.Prodi (nama_prodi)" + "values (@id)";
-                SqlCommand cmd = new SqlCommand(str, koneksi);
-                cmd.CommandType = CommandType.Text;
-                cmd.Parameters.Add(new SqlParameter("@id", nmProdi));
-                cmd.ExecuteNonQuery();
+                string randomCode = GenerateRandomNonRepetitiveString(5);
+
+                string str = "INSERT INTO dbo.Prodi (id_prodi, nama_prodi)" + "VALUES(@randomcode, @id)";
+                using (SqlCommand command = new SqlCommand(str, koneksi))
+                {
+                    command.Parameters.Add("@randomcode", SqlDbType.VarChar).Value = randomCode;
+                    command.Parameters.Add("@id", SqlDbType.VarChar).Value = nmProdi;
+                    command.ExecuteNonQuery();
+                }
 
                 koneksi.Close();
-                MessageBox.Show("Data Berhasil DiSimpan", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Data Have been added", "success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 dataGridView();
                 refreshform();
+
             }
         }
 
@@ -107,9 +128,7 @@ namespace Disconnected_Environment
 
         private void Form2_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Form1 form = new Form1();
-            form.Show();
-            this.Hide();
+           
         }
     }
 }
