@@ -31,26 +31,28 @@ namespace Disconnected_Environment
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.disconnected_EnvironmentDataSet = new Disconnected_Environment.Disconnected_EnvironmentDataSet();
-            this.statusMahasiswaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.status_MahasiswaTableAdapter = new Disconnected_Environment.Disconnected_EnvironmentDataSetTableAdapters.Status_MahasiswaTableAdapter();
             this.idstatusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nimDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.statusmahasiswaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tahunmasukDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.statusMahasiswaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.disconnected_EnvironmentDataSet = new Disconnected_Environment.Disconnected_EnvironmentDataSet();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.cbxNama = new System.Windows.Forms.ComboBox();
+            this.cbxStatusMahasiswa = new System.Windows.Forms.ComboBox();
+            this.cbxTahunMasuk = new System.Windows.Forms.ComboBox();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.btnClear = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.status_MahasiswaTableAdapter = new Disconnected_Environment.Disconnected_EnvironmentDataSetTableAdapters.Status_MahasiswaTableAdapter();
+            this.btnOpen = new System.Windows.Forms.Button();
+            this.txtNIM = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.disconnected_EnvironmentDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.statusMahasiswaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.disconnected_EnvironmentDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -69,6 +71,49 @@ namespace Disconnected_Environment
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(652, 187);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // idstatusDataGridViewTextBoxColumn
+            // 
+            this.idstatusDataGridViewTextBoxColumn.DataPropertyName = "id_status";
+            this.idstatusDataGridViewTextBoxColumn.HeaderText = "id_status";
+            this.idstatusDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.idstatusDataGridViewTextBoxColumn.Name = "idstatusDataGridViewTextBoxColumn";
+            this.idstatusDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // nimDataGridViewTextBoxColumn
+            // 
+            this.nimDataGridViewTextBoxColumn.DataPropertyName = "nim";
+            this.nimDataGridViewTextBoxColumn.HeaderText = "nim";
+            this.nimDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.nimDataGridViewTextBoxColumn.Name = "nimDataGridViewTextBoxColumn";
+            this.nimDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // statusmahasiswaDataGridViewTextBoxColumn
+            // 
+            this.statusmahasiswaDataGridViewTextBoxColumn.DataPropertyName = "status_mahasiswa";
+            this.statusmahasiswaDataGridViewTextBoxColumn.HeaderText = "status_mahasiswa";
+            this.statusmahasiswaDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.statusmahasiswaDataGridViewTextBoxColumn.Name = "statusmahasiswaDataGridViewTextBoxColumn";
+            this.statusmahasiswaDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // tahunmasukDataGridViewTextBoxColumn
+            // 
+            this.tahunmasukDataGridViewTextBoxColumn.DataPropertyName = "tahun_masuk";
+            this.tahunmasukDataGridViewTextBoxColumn.HeaderText = "tahun_masuk";
+            this.tahunmasukDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.tahunmasukDataGridViewTextBoxColumn.Name = "tahunmasukDataGridViewTextBoxColumn";
+            this.tahunmasukDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // statusMahasiswaBindingSource
+            // 
+            this.statusMahasiswaBindingSource.DataMember = "Status_Mahasiswa";
+            this.statusMahasiswaBindingSource.DataSource = this.disconnected_EnvironmentDataSet;
+            // 
+            // disconnected_EnvironmentDataSet
+            // 
+            this.disconnected_EnvironmentDataSet.DataSetName = "Disconnected_EnvironmentDataSet";
+            this.disconnected_EnvironmentDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label1
             // 
@@ -106,114 +151,111 @@ namespace Disconnected_Environment
             this.label4.TabIndex = 4;
             this.label4.Text = "Tahun Masuk";
             // 
-            // comboBox1
+            // cbxNama
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(273, 243);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 24);
-            this.comboBox1.TabIndex = 5;
+            this.cbxNama.FormattingEnabled = true;
+            this.cbxNama.Location = new System.Drawing.Point(273, 243);
+            this.cbxNama.Name = "cbxNama";
+            this.cbxNama.Size = new System.Drawing.Size(121, 24);
+            this.cbxNama.TabIndex = 5;
+            this.cbxNama.SelectedIndexChanged += new System.EventHandler(this.cbxNama_SelectedIndexChanged);
             // 
-            // comboBox2
+            // cbxStatusMahasiswa
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(273, 319);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 24);
-            this.comboBox2.TabIndex = 6;
+            this.cbxStatusMahasiswa.FormattingEnabled = true;
+            this.cbxStatusMahasiswa.Items.AddRange(new object[] {
+            "Aktif",
+            "Non-Aktif"});
+            this.cbxStatusMahasiswa.Location = new System.Drawing.Point(273, 319);
+            this.cbxStatusMahasiswa.Name = "cbxStatusMahasiswa";
+            this.cbxStatusMahasiswa.Size = new System.Drawing.Size(121, 24);
+            this.cbxStatusMahasiswa.TabIndex = 6;
+            this.cbxStatusMahasiswa.SelectedIndexChanged += new System.EventHandler(this.cbxStatusMahasiswa_SelectedIndexChanged);
             // 
-            // comboBox3
+            // cbxTahunMasuk
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(273, 361);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(121, 24);
-            this.comboBox3.TabIndex = 7;
+            this.cbxTahunMasuk.FormattingEnabled = true;
+            this.cbxTahunMasuk.Items.AddRange(new object[] {
+            "2015",
+            "2016",
+            "2017",
+            "2018",
+            "2019",
+            "2020",
+            "2021",
+            "2022",
+            "2023"});
+            this.cbxTahunMasuk.Location = new System.Drawing.Point(273, 361);
+            this.cbxTahunMasuk.Name = "cbxTahunMasuk";
+            this.cbxTahunMasuk.Size = new System.Drawing.Size(121, 24);
+            this.cbxTahunMasuk.TabIndex = 7;
+            this.cbxTahunMasuk.SelectedIndexChanged += new System.EventHandler(this.cbxTahunMasuk_SelectedIndexChanged);
             // 
-            // button1
+            // btnAdd
             // 
-            this.button1.Location = new System.Drawing.Point(425, 243);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "Add";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnAdd.Location = new System.Drawing.Point(425, 243);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(75, 23);
+            this.btnAdd.TabIndex = 8;
+            this.btnAdd.Text = "Add";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // button2
+            // btnClear
             // 
-            this.button2.Location = new System.Drawing.Point(425, 316);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 9;
-            this.button2.Text = "Clear";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnClear.Location = new System.Drawing.Point(425, 316);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(75, 23);
+            this.btnClear.TabIndex = 9;
+            this.btnClear.Text = "Clear";
+            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
-            // button3
+            // btnSave
             // 
-            this.button3.Location = new System.Drawing.Point(425, 362);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 10;
-            this.button3.Text = "Save";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // disconnected_EnvironmentDataSet
-            // 
-            this.disconnected_EnvironmentDataSet.DataSetName = "Disconnected_EnvironmentDataSet";
-            this.disconnected_EnvironmentDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // statusMahasiswaBindingSource
-            // 
-            this.statusMahasiswaBindingSource.DataMember = "Status_Mahasiswa";
-            this.statusMahasiswaBindingSource.DataSource = this.disconnected_EnvironmentDataSet;
+            this.btnSave.Location = new System.Drawing.Point(425, 362);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(75, 23);
+            this.btnSave.TabIndex = 10;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // status_MahasiswaTableAdapter
             // 
             this.status_MahasiswaTableAdapter.ClearBeforeFill = true;
             // 
-            // idstatusDataGridViewTextBoxColumn
+            // btnOpen
             // 
-            this.idstatusDataGridViewTextBoxColumn.DataPropertyName = "id_status";
-            this.idstatusDataGridViewTextBoxColumn.HeaderText = "id_status";
-            this.idstatusDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.idstatusDataGridViewTextBoxColumn.Name = "idstatusDataGridViewTextBoxColumn";
-            this.idstatusDataGridViewTextBoxColumn.Width = 125;
+            this.btnOpen.Location = new System.Drawing.Point(712, 81);
+            this.btnOpen.Name = "btnOpen";
+            this.btnOpen.Size = new System.Drawing.Size(75, 23);
+            this.btnOpen.TabIndex = 11;
+            this.btnOpen.Text = "Open";
+            this.btnOpen.UseVisualStyleBackColor = true;
+            this.btnOpen.Click += new System.EventHandler(this.btnOpen_Click);
             // 
-            // nimDataGridViewTextBoxColumn
+            // txtNIM
             // 
-            this.nimDataGridViewTextBoxColumn.DataPropertyName = "nim";
-            this.nimDataGridViewTextBoxColumn.HeaderText = "nim";
-            this.nimDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.nimDataGridViewTextBoxColumn.Name = "nimDataGridViewTextBoxColumn";
-            this.nimDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // statusmahasiswaDataGridViewTextBoxColumn
-            // 
-            this.statusmahasiswaDataGridViewTextBoxColumn.DataPropertyName = "status_mahasiswa";
-            this.statusmahasiswaDataGridViewTextBoxColumn.HeaderText = "status_mahasiswa";
-            this.statusmahasiswaDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.statusmahasiswaDataGridViewTextBoxColumn.Name = "statusmahasiswaDataGridViewTextBoxColumn";
-            this.statusmahasiswaDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // tahunmasukDataGridViewTextBoxColumn
-            // 
-            this.tahunmasukDataGridViewTextBoxColumn.DataPropertyName = "tahun_masuk";
-            this.tahunmasukDataGridViewTextBoxColumn.HeaderText = "tahun_masuk";
-            this.tahunmasukDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.tahunmasukDataGridViewTextBoxColumn.Name = "tahunmasukDataGridViewTextBoxColumn";
-            this.tahunmasukDataGridViewTextBoxColumn.Width = 125;
+            this.txtNIM.Location = new System.Drawing.Point(273, 283);
+            this.txtNIM.Name = "txtNIM";
+            this.txtNIM.Size = new System.Drawing.Size(121, 22);
+            this.txtNIM.TabIndex = 12;
+            this.txtNIM.TextChanged += new System.EventHandler(this.txtNIM_TextChanged);
             // 
             // Form4
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.comboBox3);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.txtNIM);
+            this.Controls.Add(this.btnOpen);
+            this.Controls.Add(this.btnSave);
+            this.Controls.Add(this.btnClear);
+            this.Controls.Add(this.btnAdd);
+            this.Controls.Add(this.cbxTahunMasuk);
+            this.Controls.Add(this.cbxStatusMahasiswa);
+            this.Controls.Add(this.cbxNama);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -223,8 +265,8 @@ namespace Disconnected_Environment
             this.Text = "Form4";
             this.Load += new System.EventHandler(this.Form4_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.disconnected_EnvironmentDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.statusMahasiswaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.disconnected_EnvironmentDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -237,12 +279,12 @@ namespace Disconnected_Environment
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.ComboBox cbxNama;
+        private System.Windows.Forms.ComboBox cbxStatusMahasiswa;
+        private System.Windows.Forms.ComboBox cbxTahunMasuk;
+        private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.Button btnSave;
         private Disconnected_EnvironmentDataSet disconnected_EnvironmentDataSet;
         private System.Windows.Forms.BindingSource statusMahasiswaBindingSource;
         private Disconnected_EnvironmentDataSetTableAdapters.Status_MahasiswaTableAdapter status_MahasiswaTableAdapter;
@@ -250,5 +292,7 @@ namespace Disconnected_Environment
         private System.Windows.Forms.DataGridViewTextBoxColumn nimDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn statusmahasiswaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn tahunmasukDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button btnOpen;
+        private System.Windows.Forms.TextBox txtNIM;
     }
 }
