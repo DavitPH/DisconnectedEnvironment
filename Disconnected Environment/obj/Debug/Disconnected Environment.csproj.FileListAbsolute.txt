@@ -1,0 +1,17 @@
+E:\Perkuliahan\Semester 4\PADB\Disconnected Environment\Disconnected Environment\bin\Debug\Disconnected Environment.exe.config
+E:\Perkuliahan\Semester 4\PADB\Disconnected Environment\Disconnected Environment\bin\Debug\Disconnected Environment.exe
+E:\Perkuliahan\Semester 4\PADB\Disconnected Environment\Disconnected Environment\bin\Debug\Disconnected Environment.pdb
+E:\Perkuliahan\Semester 4\PADB\Disconnected Environment\Disconnected Environment\obj\Debug\Disconnected Environment.csproj.AssemblyReference.cache
+E:\Perkuliahan\Semester 4\PADB\Disconnected Environment\Disconnected Environment\obj\Debug\Disconnected_Environment.Form1.resources
+E:\Perkuliahan\Semester 4\PADB\Disconnected Environment\Disconnected Environment\obj\Debug\Disconnected_Environment.Properties.Resources.resources
+E:\Perkuliahan\Semester 4\PADB\Disconnected Environment\Disconnected Environment\obj\Debug\Disconnected Environment.csproj.GenerateResource.cache
+E:\Perkuliahan\Semester 4\PADB\Disconnected Environment\Disconnected Environment\obj\Debug\Disconnected Environment.csproj.CoreCompileInputs.cache
+E:\Perkuliahan\Semester 4\PADB\Disconnected Environment\Disconnected Environment\obj\Debug\Disconnected Environment.exe
+E:\Perkuliahan\Semester 4\PADB\Disconnected Environment\Disconnected Environment\obj\Debug\Disconnected Environment.pdb
+E:\Perkuliahan\Semester 4\PADB\Disconnected Environment\Disconnected Environment\obj\Debug\Disconnected_Environment.Form2.resources
+E:\Perkuliahan\Semester 4\PADB\Disconnected Environment\Disconnected Environment\obj\Debug\Disconnected_Environment.Form3.resources
+E:\Perkuliahan\Semester 4\PADB\Disconnected Environment\Disconnected Environment\obj\Debug\Disconnected_Environment.Form4.resources
+E:\Perkuliahan\Semester 4\PADB\Disconnected Environment\Disconnected Environment\bin\Debug\SQLConnection.dll
+E:\Perkuliahan\Semester 4\PADB\Disconnected Environment\Disconnected Environment\bin\Debug\System.Data.SqlClient.dll
+E:\Perkuliahan\Semester 4\PADB\Disconnected Environment\Disconnected Environment\bin\Debug\System.Data.SqlClient.xml
+E:\Perkuliahan\Semester 4\PADB\Disconnected Environment\Disconnected Environment\obj\Debug\Disconnected Environment.csproj.CopyComplete
